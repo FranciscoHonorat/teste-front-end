@@ -1,5 +1,5 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .header {
   background: $color-branco;
@@ -42,15 +42,15 @@
   @include container;
   display: grid;
   grid-template-areas:
-    'logo icons'
-    'search search';
+    "logo icons"
+    "search search";
   grid-template-columns: minmax(0, 1fr) auto;
   gap: $space-12 $space-16;
   align-items: center;
   padding-block: $space-12;
 
   @include from($bp-desktop) {
-    grid-template-areas: 'logo search icons';
+    grid-template-areas: "logo search icons";
     grid-template-columns: 1fr 630px 1fr;
     height: 72px;
     padding-block: 0;

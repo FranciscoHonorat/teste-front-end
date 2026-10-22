@@ -1,8 +1,14 @@
-import { Logo } from '../Logo/Logo'
-import { SectionTitle } from '../SectionTitle/SectionTitle'
-import styles from './BrandList.module.scss'
+import { Logo } from "../Logo/Logo";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
+import styles from "./BrandList.module.scss";
 
-const brands = ['Econverse 1', 'Econverse 2', 'Econverse 3', 'Econverse 4', 'Econverse 5']
+const brands = [
+  "Econverse 1",
+  "Econverse 2",
+  "Econverse 3",
+  "Econverse 4",
+  "Econverse 5",
+];
 
 export function BrandList() {
   return (
@@ -18,5 +24,5 @@ export function BrandList() {
         ))}
       </ul>
     </section>
-  )
+  );
 }

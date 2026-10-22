@@ -1,18 +1,26 @@
-import { decrementQuantity, incrementQuantity, MIN_QUANTITY } from '../../../domain/rules/quantity'
-import { formatQuantity } from '../../formatters/formatQuantity'
-import styles from './QuantityStepper.module.scss'
+import {
+  decrementQuantity,
+  incrementQuantity,
+  MIN_QUANTITY,
+} from "../../../domain/rules/quantity";
+import { formatQuantity } from "../../formatters/formatQuantity";
+import styles from "./QuantityStepper.module.scss";
 
 type QuantityStepperProps = {
-  value: number
-  onChange: (value: number) => void
-}
+  value: number;
+  onChange: (value: number) => void;
+};
 
 export function QuantityStepper({ value, onChange }: QuantityStepperProps) {
-  const decrement = () => onChange(decrementQuantity(value))
-  const increment = () => onChange(incrementQuantity(value))
+  const decrement = () => onChange(decrementQuantity(value));
+  const increment = () => onChange(incrementQuantity(value));
 
   return (
-    <div className={styles.stepper} role="group" aria-label="Seletor de quantidade">
+    <div
+      className={styles.stepper}
+      role="group"
+      aria-label="Seletor de quantidade"
+    >
       <button
         type="button"
         className={styles.button}
@@ -25,9 +33,14 @@ export function QuantityStepper({ value, onChange }: QuantityStepperProps) {
       <output className={styles.value} aria-label="Quantidade">
         {formatQuantity(value)}
       </output>
-      <button type="button" className={styles.button} aria-label="Aumentar quantidade" onClick={increment}>
+      <button
+        type="button"
+        className={styles.button}
+        aria-label="Aumentar quantidade"
+        onClick={increment}
+      >
         +
       </button>
     </div>
-  )
+  );
 }

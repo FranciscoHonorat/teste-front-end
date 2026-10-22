@@ -1,10 +1,10 @@
-import { makeListProducts } from './main/factories/makeListProducts'
-import { HomePage } from './presentation/pages/HomePage'
+import { makeListProducts } from "./main/factories/makeListProducts";
+import { HomePage } from "./presentation/pages/HomePage";
 
-const listProducts = makeListProducts()
+const listProducts = makeListProducts();
 
 function App() {
-  return <HomePage listProducts={listProducts} />
+  return <HomePage listProducts={listProducts} />;
 }
 
-export default App
+export default App;

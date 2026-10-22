@@ -1,5 +1,5 @@
-import { PromoBanner } from '../PromoBanner/PromoBanner'
-import styles from './PartnerBanners.module.scss'
+import { PromoBanner } from "../PromoBanner/PromoBanner";
+import styles from "./PartnerBanners.module.scss";
 
 export function PartnerBanners() {
   return (
@@ -15,5 +15,5 @@ export function PartnerBanners() {
         />
       ))}
     </section>
-  )
+  );
 }

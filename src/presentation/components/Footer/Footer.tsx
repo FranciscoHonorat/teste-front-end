@@ -1,20 +1,33 @@
-import { Logo } from '../Logo/Logo'
-import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../icons/Icons'
-import styles from './Footer.module.scss'
+import { Logo } from "../Logo/Logo";
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from "../icons/Icons";
+import styles from "./Footer.module.scss";
 
 const columns = [
-  { title: 'Institucional', links: ['Sobre Nós', 'Movimento', 'Trabalhe conosco'] },
-  { title: 'Ajuda', links: ['Suporte', 'Fale Conosco', 'Perguntas Frequentes'] },
-  { title: 'Termos', links: ['Termos e Condições', 'Política de Privacidade', 'Troca e Devolução'] },
-]
+  {
+    title: "Institucional",
+    links: ["Sobre Nós", "Movimento", "Trabalhe conosco"],
+  },
+  {
+    title: "Ajuda",
+    links: ["Suporte", "Fale Conosco", "Perguntas Frequentes"],
+  },
+  {
+    title: "Termos",
+    links: [
+      "Termos e Condições",
+      "Política de Privacidade",
+      "Troca e Devolução",
+    ],
+  },
+];
 
-const CURRENT_YEAR = new Date().getFullYear()
+const CURRENT_YEAR = new Date().getFullYear();
 
 const socials = [
-  { label: 'Instagram', Icon: InstagramIcon },
-  { label: 'Facebook', Icon: FacebookIcon },
-  { label: 'LinkedIn', Icon: LinkedinIcon },
-]
+  { label: "Instagram", Icon: InstagramIcon },
+  { label: "Facebook", Icon: FacebookIcon },
+  { label: "LinkedIn", Icon: LinkedinIcon },
+];
 
 export function Footer() {
   return (
@@ -52,7 +65,9 @@ export function Footer() {
         </div>
       </div>
 
-      <p className={styles.bottomBar}>© {CURRENT_YEAR} Econverse. Todos os direitos reservados.</p>
+      <p className={styles.bottomBar}>
+        © {CURRENT_YEAR} Econverse. Todos os direitos reservados.
+      </p>
     </footer>
-  )
+  );
 }

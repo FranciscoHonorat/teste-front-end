@@ -1,5 +1,5 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .section {
   @include container;
@@ -38,13 +38,13 @@
     width: 128px;
   }
 
-  &[aria-current='true'] {
+  &[aria-current="true"] {
     font-weight: $weight-semibold;
     color: $color-azul-destaque;
   }
 
   &:hover .card,
-  &[aria-current='true'] .card {
+  &[aria-current="true"] .card {
     color: $color-azul-destaque;
   }
 }

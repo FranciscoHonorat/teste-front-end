@@ -1,5 +1,5 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .banner {
   position: relative;
@@ -10,10 +10,14 @@
   color: $color-branco;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 85%);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0) 85%
+    );
   }
 }
 

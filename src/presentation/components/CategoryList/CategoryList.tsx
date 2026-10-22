@@ -6,20 +6,20 @@ import {
   HealthIcon,
   StoreIcon,
   ToolsIcon,
-} from '../icons/Icons'
-import styles from './CategoryList.module.scss'
+} from "../icons/Icons";
+import styles from "./CategoryList.module.scss";
 
 const categories = [
-  { label: 'Tecnologia', Icon: DevicesIcon },
-  { label: 'Supermercado', Icon: StoreIcon },
-  { label: 'Bebidas', Icon: BottleIcon },
-  { label: 'Ferramentas', Icon: ToolsIcon },
-  { label: 'Saúde', Icon: HealthIcon },
-  { label: 'Esportes e Fitness', Icon: FitnessIcon },
-  { label: 'Moda', Icon: FashionIcon },
-]
+  { label: "Tecnologia", Icon: DevicesIcon },
+  { label: "Supermercado", Icon: StoreIcon },
+  { label: "Bebidas", Icon: BottleIcon },
+  { label: "Ferramentas", Icon: ToolsIcon },
+  { label: "Saúde", Icon: HealthIcon },
+  { label: "Esportes e Fitness", Icon: FitnessIcon },
+  { label: "Moda", Icon: FashionIcon },
+];
 
-const ACTIVE_CATEGORY = 'Tecnologia'
+const ACTIVE_CATEGORY = "Tecnologia";
 
 export function CategoryList() {
   return (
@@ -33,7 +33,7 @@ export function CategoryList() {
             <a
               href="#"
               className={styles.item}
-              aria-current={label === ACTIVE_CATEGORY ? 'true' : undefined}
+              aria-current={label === ACTIVE_CATEGORY ? "true" : undefined}
             >
               <span className={styles.card}>
                 <Icon size={61} strokeWidth={1.1} />
@@ -44,5 +44,5 @@ export function CategoryList() {
         ))}
       </ul>
     </section>
-  )
+  );
 }

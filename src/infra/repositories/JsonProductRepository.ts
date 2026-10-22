@@ -1,19 +1,19 @@
-import type { Product } from '../../domain/entities/Product'
-import type { ProductRepository } from '../../domain/repositories/ProductRepository'
+import type { Product } from "../../domain/entities/Product";
+import type { ProductRepository } from "../../domain/repositories/ProductRepository";
 
 type ProductDto = {
-  productName: string
-  descriptionShort: string
-  photo: string
-  price: number
-}
+  productName: string;
+  descriptionShort: string;
+  photo: string;
+  price: number;
+};
 
 type ProductsResponseDto = {
-  success: boolean
-  products: ProductDto[]
-}
+  success: boolean;
+  products: ProductDto[];
+};
 
-const LOAD_ERROR = 'Falha ao carregar produtos'
+const LOAD_ERROR = "Falha ao carregar produtos";
 
 function toProduct(dto: ProductDto): Product {
   return {
@@ -21,25 +21,25 @@ function toProduct(dto: ProductDto): Product {
     description: dto.descriptionShort,
     photoUrl: dto.photo,
     price: dto.price,
-  }
+  };
 }
 
 export class JsonProductRepository implements ProductRepository {
-  private readonly url: string
+  private readonly url: string;
 
   constructor(url: string) {
-    this.url = url
+    this.url = url;
   }
 
   async getAll(): Promise<Product[]> {
-    const response = await fetch(this.url)
+    const response = await fetch(this.url);
     if (!response.ok) {
-      throw new Error(`${LOAD_ERROR} (HTTP ${response.status})`)
+      throw new Error(`${LOAD_ERROR} (HTTP ${response.status})`);
     }
-    const body: ProductsResponseDto = await response.json()
+    const body: ProductsResponseDto = await response.json();
     if (!body.success) {
-      throw new Error(LOAD_ERROR)
+      throw new Error(LOAD_ERROR);
     }
-    return body.products.map(toProduct)
+    return body.products.map(toProduct);
   }
 }

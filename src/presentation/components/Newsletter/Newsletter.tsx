@@ -1,13 +1,13 @@
-import { useState, type FormEvent } from 'react'
-import { Button } from '../Button/Button'
-import styles from './Newsletter.module.scss'
+import { useState, type FormEvent } from "react";
+import { Button } from "../Button/Button";
+import styles from "./Newsletter.module.scss";
 
 export function Newsletter() {
-  const [subscribed, setSubscribed] = useState(false)
+  const [subscribed, setSubscribed] = useState(false);
 
   function handleSubmit(event: FormEvent) {
-    event.preventDefault()
-    setSubscribed(true)
+    event.preventDefault();
+    setSubscribed(true);
   }
 
   return (
@@ -18,7 +18,8 @@ export function Newsletter() {
             Inscreva-se na nossa newsletter
           </h2>
           <p className={styles.text}>
-            Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse.
+            Assine a nossa newsletter e receba as novidades e conteúdos
+            exclusivos da Econverse.
           </p>
         </div>
 
@@ -32,11 +33,25 @@ export function Newsletter() {
               <label htmlFor="newsletter-nome" className="visually-hidden">
                 Nome
               </label>
-              <input id="newsletter-nome" name="nome" type="text" placeholder="Digite seu nome" autoComplete="name" required />
+              <input
+                id="newsletter-nome"
+                name="nome"
+                type="text"
+                placeholder="Digite seu nome"
+                autoComplete="name"
+                required
+              />
               <label htmlFor="newsletter-email" className="visually-hidden">
                 E-mail
               </label>
-              <input id="newsletter-email" name="email" type="email" placeholder="Digite seu e-mail" autoComplete="email" required />
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                placeholder="Digite seu e-mail"
+                autoComplete="email"
+                required
+              />
               <Button variant="yellow" type="submit" className={styles.submit}>
                 Inscrever
               </Button>
@@ -49,5 +64,5 @@ export function Newsletter() {
         )}
       </div>
     </section>
-  )
+  );
 }

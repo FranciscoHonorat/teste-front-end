@@ -1,4 +1,4 @@
-import { Logo } from '../Logo/Logo'
+import { Logo } from "../Logo/Logo";
 import {
   CardIcon,
   CartIcon,
@@ -9,17 +9,24 @@ import {
   ShieldIcon,
   TruckIcon,
   UserIcon,
-} from '../icons/Icons'
-import styles from './Header.module.scss'
+} from "../icons/Icons";
+import styles from "./Header.module.scss";
 
-const categories = ['Todas categorias', 'Supermercado', 'Livros', 'Moda', 'Lançamentos', 'Ofertas do dia']
+const categories = [
+  "Todas categorias",
+  "Supermercado",
+  "Livros",
+  "Moda",
+  "Lançamentos",
+  "Ofertas do dia",
+];
 
 const userLinks = [
-  { label: 'Meus pedidos', Icon: OrdersIcon },
-  { label: 'Favoritos', Icon: HeartIcon },
-  { label: 'Minha conta', Icon: UserIcon },
-  { label: 'Carrinho', Icon: CartIcon },
-]
+  { label: "Meus pedidos", Icon: OrdersIcon },
+  { label: "Favoritos", Icon: HeartIcon },
+  { label: "Minha conta", Icon: UserIcon },
+  { label: "Carrinho", Icon: CartIcon },
+];
 
 export function Header() {
   return (
@@ -44,11 +51,19 @@ export function Header() {
           <Logo />
         </a>
 
-        <form className={styles.search} role="search" onSubmit={(event) => event.preventDefault()}>
+        <form
+          className={styles.search}
+          role="search"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <label htmlFor="search" className="visually-hidden">
             Buscar produtos
           </label>
-          <input id="search" type="search" placeholder="O que você está buscando?" />
+          <input
+            id="search"
+            type="search"
+            placeholder="O que você está buscando?"
+          />
           <button type="submit" aria-label="Buscar">
             <SearchIcon />
           </button>
@@ -69,7 +84,12 @@ export function Header() {
         <ul>
           {categories.map((category) => (
             <li key={category}>
-              <a href="#" className={category === 'Ofertas do dia' ? styles.highlight : undefined}>
+              <a
+                href="#"
+                className={
+                  category === "Ofertas do dia" ? styles.highlight : undefined
+                }
+              >
                 {category}
               </a>
             </li>
@@ -83,5 +103,5 @@ export function Header() {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
