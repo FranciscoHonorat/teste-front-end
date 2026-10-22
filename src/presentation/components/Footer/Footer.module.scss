@@ -1,0 +1,102 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: $color-fundo-footer;
+  color: $color-texto-footer;
+}
+
+.main {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $space-32;
+  padding-block: $space-42;
+
+  @include from($bp-desktop) {
+    flex-direction: row;
+    gap: 90px;
+  }
+}
+
+.about {
+  font-size: 14px;
+  line-height: 1.5;
+
+  @include from($bp-desktop) {
+    flex: 0 0 270px;
+    padding-right: 90px;
+    border-right: 1px solid $color-borda-titulo;
+    box-sizing: content-box;
+  }
+
+  p {
+    margin: $space-12 0 $space-24;
+    font-weight: $weight-light;
+  }
+}
+
+.logo {
+  width: 150px;
+}
+
+.socials {
+  @include reset-list;
+  display: flex;
+  gap: $space-24;
+
+  a {
+    display: block;
+    color: $color-cinza-escuro;
+
+    &:hover {
+      color: $color-azul;
+    }
+  }
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: $space-32;
+  flex: 1;
+
+  ul {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+    gap: $space-8;
+  }
+
+  a {
+    font-size: 14px;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-azul;
+    }
+  }
+
+  nav:first-child a {
+    font-family: $font-work-sans;
+  }
+}
+
+.columnTitle {
+  margin: 0 0 $space-16;
+  font-size: 16px;
+  font-weight: $weight-bold;
+}
+
+.bottomBar {
+  display: grid;
+  place-items: center;
+  min-height: 47px;
+  margin: 0;
+  padding-inline: $space-16;
+  background: $color-branco;
+  font-size: 13px;
+  font-weight: $weight-light;
+  color: $color-cinza-escuro;
+  text-align: center;
+}

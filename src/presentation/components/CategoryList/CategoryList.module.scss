@@ -1,0 +1,77 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include container;
+  margin-top: $space-24;
+
+  @include from($bp-tablet) {
+    margin-top: 39px;
+  }
+}
+
+.list {
+  @include reset-list;
+  @include horizontal-scroll;
+  gap: $space-16;
+  padding: $space-12 $space-4;
+
+  @include from($bp-desktop) {
+    justify-content: center;
+    gap: $space-42;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: $space-16;
+  align-items: center;
+  width: 104px;
+  font-size: 14px;
+  font-weight: $weight-regular;
+  color: $color-cinza-escuro;
+  text-align: center;
+  text-decoration: none;
+
+  @include from($bp-tablet) {
+    width: 128px;
+  }
+
+  &[aria-current='true'] {
+    font-weight: $weight-semibold;
+    color: $color-azul-destaque;
+  }
+
+  &:hover .card,
+  &[aria-current='true'] .card {
+    color: $color-azul-destaque;
+  }
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: $radius-card;
+  background: $color-branco;
+  box-shadow: $shadow-categoria;
+  color: $color-cinza-escuro;
+  transition: color 0.15s;
+
+  @include from($bp-tablet) {
+    width: 128px;
+    height: 128px;
+  }
+
+  svg {
+    width: 48px;
+    height: 48px;
+
+    @include from($bp-tablet) {
+      width: 61px;
+      height: 61px;
+    }
+  }
+}

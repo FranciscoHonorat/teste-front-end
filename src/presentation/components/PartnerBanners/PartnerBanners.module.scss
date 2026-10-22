@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include container;
+  @include section-spacing;
+  display: grid;
+  gap: 13px;
+
+  @include from($bp-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

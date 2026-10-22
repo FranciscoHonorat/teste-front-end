@@ -1,0 +1,33 @@
+@use '../../styles/variables' as *;
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+  height: 36px;
+  border: 1px solid $color-borda-quantidade;
+  border-radius: 4px;
+}
+
+.button {
+  width: 32px;
+  height: 100%;
+  border: 0;
+  background: none;
+  color: $color-roxo;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:disabled {
+    color: $color-cinza-medio;
+    cursor: not-allowed;
+  }
+}
+
+.value {
+  font-family: $font-poppins;
+  font-size: 16px;
+  font-weight: $weight-medium;
+  color: $color-roxo;
+}

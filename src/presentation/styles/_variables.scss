@@ -1,0 +1,68 @@
+$color-azul: #3442b5;
+$color-amarelo: #f7ca11;
+$color-roxo: #271c47;
+$color-cinza-medio: #9f9f9f;
+$color-cinza-escuro: #3f3f40;
+$color-branco: #ffffff;
+
+$color-azul-destaque: #3019b2;
+$color-texto-aba: #3b3b3b;
+$color-texto-placeholder: #676767;
+$color-texto-secundario: #4e4e4e;
+$color-preco-antigo: #808080;
+$color-texto-botao-inscrever: #161615;
+$color-texto-footer: rgba(34, 34, 34, 0.71);
+$color-icone-fechar: #707070;
+
+$color-fundo-busca: #f6f5f2;
+$color-fundo-footer: #f4f4f4;
+
+$color-borda-header: #f0f0f0;
+$color-borda-aba: #bdbdbd;
+$color-borda-imagem: #b1b1b1;
+$color-borda-input: #e7e7e7;
+$color-borda-titulo: #dedede;
+$color-borda-quantidade: #d9d9d9;
+
+$color-overlay: rgba(0, 0, 0, 0.54);
+
+$font-poppins: 'Poppins', sans-serif;
+$font-outfit: 'Outfit', sans-serif;
+$font-work-sans: 'Work Sans', sans-serif;
+
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+$frame-width: 1440px;
+$container-width: 1280px;
+$container-gutter: 80px;
+$showcase-width: 1270px;
+$showcase-gap: 18px;
+
+$shadow-menu: 0 8px 16px rgba(57, 48, 19, 0.12);
+$shadow-categoria: 0 2px 9px rgba(0, 0, 0, 0.22);
+$shadow-card: 0 3px 19px rgba(0, 0, 0, 0.22);
+$shadow-marca: 0 7px 20px rgba(0, 0, 0, 0.13);
+
+$space-4: 4px;
+$space-8: 8px;
+$space-12: 12px;
+$space-16: 16px;
+$space-24: 24px;
+$space-32: 32px;
+$space-42: 42px;
+$space-48: 48px;
+$space-64: 64px;
+$space-80: 80px;
+
+$section-gap: $space-80;
+$section-gap-mobile: $space-48;
+
+$bp-tablet: 768px;
+$bp-desktop: 1280px;
+
+$radius-card: 10px;
+$radius-banner: 20px;

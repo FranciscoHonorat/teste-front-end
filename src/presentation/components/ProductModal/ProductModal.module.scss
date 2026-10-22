@@ -1,0 +1,112 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.modal {
+  width: 769px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 40px $space-16 $space-24;
+
+  @include from($bp-tablet) {
+    padding: 39px 42px;
+  }
+  border: 0;
+  border-radius: 6px;
+  background: $color-branco;
+
+  &::backdrop {
+    background: $color-overlay;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: $color-icone-fechar;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-24;
+  align-items: center;
+
+  @include from($bp-tablet) {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.photo {
+  flex-shrink: 0;
+  width: 247px;
+  max-width: 100%;
+  height: 192px;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.name,
+.price {
+  margin: 0;
+  font-family: $font-poppins;
+  font-size: 20px;
+  color: $color-cinza-escuro;
+}
+
+.name {
+  font-weight: $weight-regular;
+  text-transform: uppercase;
+}
+
+.price {
+  font-weight: $weight-semibold;
+}
+
+.description {
+  margin: 8px 0 0;
+  font-family: $font-work-sans;
+  font-size: 10px;
+  font-weight: $weight-medium;
+  line-height: 1.5;
+  color: $color-cinza-medio;
+}
+
+.detailsLink {
+  font-family: $font-work-sans;
+  font-size: 11px;
+  font-weight: $weight-semibold;
+  color: $color-azul;
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.buyButton {
+  flex: 1;
+  max-width: 188px;
+  height: 36px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: $weight-bold;
+}

@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.carousel {
+  position: relative;
+}
+
+.track {
+  @include reset-list;
+  @include horizontal-scroll;
+  gap: $showcase-gap;
+  margin-inline: -$space-12;
+  padding: $space-24 $space-12;
+  scroll-padding-inline: $space-12;
+
+  @include from($bp-desktop) {
+    margin-inline: calc(($container-width - $showcase-width) / 2 - $space-12);
+  }
+}
+
+.arrow {
+  @include reset-button;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: $color-branco;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  color: $color-cinza-escuro;
+  transform: translateY(-50%);
+
+  @include from($bp-tablet) {
+    display: grid;
+  }
+
+  &:hover {
+    color: $color-azul;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-azul-destaque;
+  }
+}
+
+.previous {
+  left: 0;
+
+  @include from($bp-desktop) {
+    left: -$space-24;
+  }
+}
+
+.next {
+  right: 0;
+
+  @include from($bp-desktop) {
+    right: -$space-24;
+  }
+}

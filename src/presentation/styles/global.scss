@@ -1,0 +1,35 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $color-branco;
+  color: $color-cinza-escuro;
+  font-family: $font-poppins;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

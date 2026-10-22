@@ -1,0 +1,33 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: $weight-bold;
+  line-height: 1.5;
+  color: $color-azul;
+  text-align: center;
+
+  @include from($bp-tablet) {
+    font-size: 30px;
+  }
+}
+
+.withLines {
+  @include from($bp-tablet) {
+    display: flex;
+    gap: $space-24;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 0 1 360px;
+      height: 1px;
+      background: $color-borda-titulo;
+    }
+  }
+}

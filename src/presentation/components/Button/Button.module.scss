@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-family: $font-poppins;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: filter 0.15s;
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-azul-destaque;
+    outline-offset: 2px;
+  }
+}
+
+.yellow {
+  background: $color-amarelo;
+  color: $color-roxo;
+}
+
+.blue {
+  background: $color-azul;
+  color: $color-branco;
+}

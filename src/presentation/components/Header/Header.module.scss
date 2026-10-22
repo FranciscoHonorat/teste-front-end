@@ -1,0 +1,179 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  background: $color-branco;
+}
+
+.topBar {
+  @include reset-list;
+  @include container-scroll;
+  gap: $space-32;
+  align-items: center;
+  height: 32px;
+  border-bottom: 1px solid $color-borda-header;
+  font-size: 12px;
+  font-weight: $weight-medium;
+  color: $color-cinza-medio;
+  white-space: nowrap;
+
+  @include from($bp-tablet) {
+    justify-content: center;
+    gap: 119px;
+  }
+
+  li {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  svg {
+    color: $color-cinza-medio;
+  }
+
+  strong {
+    font-weight: $weight-semibold;
+    color: $color-azul-destaque;
+  }
+}
+
+.main {
+  @include container;
+  display: grid;
+  grid-template-areas:
+    'logo icons'
+    'search search';
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: $space-12 $space-16;
+  align-items: center;
+  padding-block: $space-12;
+
+  @include from($bp-desktop) {
+    grid-template-areas: 'logo search icons';
+    grid-template-columns: 1fr 630px 1fr;
+    height: 72px;
+    padding-block: 0;
+  }
+}
+
+.logoLink {
+  grid-area: logo;
+  display: block;
+
+  svg {
+    width: 130px;
+    max-width: 100%;
+
+    @include from($bp-tablet) {
+      width: 170px;
+    }
+  }
+}
+
+.search {
+  grid-area: search;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-inline: $space-24 $space-16;
+  border-radius: 10px;
+  background: $color-fundo-busca;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: none;
+    font-size: 14px;
+    font-weight: $weight-medium;
+    color: $color-cinza-escuro;
+    outline: none;
+
+    &::placeholder {
+      color: $color-cinza-medio;
+    }
+  }
+
+  button {
+    @include reset-button;
+    color: $color-cinza-medio;
+  }
+
+  &:focus-within {
+    outline: 2px solid $color-azul-destaque;
+  }
+}
+
+.userLinks {
+  @include reset-list;
+  grid-area: icons;
+  display: flex;
+  gap: $space-12;
+  justify-content: flex-end;
+  color: $color-cinza-medio;
+
+  @include from($bp-tablet) {
+    gap: $space-32;
+  }
+
+  a {
+    display: block;
+    transition: color 0.15s;
+
+    &:hover {
+      color: $color-azul;
+    }
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+
+    @include from($bp-tablet) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.nav {
+  box-shadow: $shadow-menu;
+
+  ul {
+    @include reset-list;
+    @include container-scroll;
+    gap: $space-32;
+    align-items: center;
+    height: 40px;
+
+    @include from($bp-desktop) {
+      justify-content: center;
+      gap: 91px;
+    }
+  }
+
+  a {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: $weight-semibold;
+    color: $color-cinza-medio;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover {
+      color: $color-azul-destaque;
+    }
+  }
+
+  .highlight {
+    color: $color-azul-destaque;
+  }
+}
+
+.subscription svg {
+  color: $color-cinza-medio;
+}

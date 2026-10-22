@@ -1,0 +1,49 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include container;
+  @include section-spacing;
+}
+
+.list {
+  @include reset-list;
+  @include horizontal-scroll;
+  gap: $space-16;
+  margin-top: $space-24;
+  padding: $space-16 $space-8 $space-24;
+
+  @include from($bp-desktop) {
+    justify-content: center;
+    gap: $space-42;
+    margin-top: $space-32;
+  }
+}
+
+.brand {
+  display: grid;
+  place-items: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: $color-branco;
+  box-shadow: $shadow-marca;
+  transition: transform 0.15s;
+
+  @include from($bp-desktop) {
+    width: 211px;
+    height: 211px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 100px;
+
+    @include from($bp-desktop) {
+      width: 130px;
+    }
+  }
+}

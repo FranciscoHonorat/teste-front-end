@@ -1,0 +1,66 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.showcase {
+  @include container;
+  @include section-spacing;
+}
+
+.seeAll {
+  display: block;
+  width: fit-content;
+  margin: $space-4 auto 0;
+  font-size: 15px;
+  font-weight: $weight-bold;
+  color: $color-cinza-escuro;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-azul;
+  }
+}
+
+.tabs {
+  @include horizontal-scroll;
+  max-width: $container-width;
+  margin: $space-24 auto 0;
+}
+
+.tab {
+  @include reset-button;
+  flex: 1 0 auto;
+  min-width: 140px;
+  height: 40px;
+  padding: $space-12 $space-24;
+  border: 1px solid $color-borda-aba;
+  font-size: 14px;
+  font-weight: $weight-regular;
+  line-height: 1;
+  color: $color-texto-aba;
+  text-transform: uppercase;
+
+  @include from($bp-desktop) {
+    flex: 1 1 214px;
+    font-size: 16px;
+  }
+
+  & + & {
+    margin-left: -1px;
+  }
+
+  &[aria-selected='true'] {
+    font-weight: $weight-bold;
+    color: $color-azul;
+  }
+
+  &:focus-visible {
+    position: relative;
+    outline: 2px solid $color-azul-destaque;
+  }
+}
+
+.feedback {
+  margin: $space-32 0;
+  text-align: center;
+  color: $color-cinza-medio;
+}

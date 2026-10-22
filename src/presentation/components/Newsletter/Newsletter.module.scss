@@ -1,0 +1,115 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.newsletter {
+  margin-top: $section-gap-mobile;
+  padding-block: $space-32;
+  background: $color-roxo;
+  color: $color-branco;
+
+  @include from($bp-desktop) {
+    margin-top: $section-gap;
+  }
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $space-24;
+
+  @include from($bp-desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 98px;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: $font-outfit;
+  font-size: 26px;
+  font-weight: $weight-semibold;
+  line-height: 1.2;
+
+  @include from($bp-tablet) {
+    font-size: 32px;
+  }
+}
+
+.text {
+  max-width: 500px;
+  margin: $space-8 0 0;
+  font-size: 14px;
+  font-weight: $weight-light;
+  line-height: 18px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+
+  @include from($bp-tablet) {
+    flex-direction: row;
+  }
+
+  input {
+    width: 100%;
+    height: 42px;
+    padding: $space-12 $space-24;
+    border: 1px solid $color-borda-input;
+    border-radius: 8px;
+    font-size: 14px;
+    color: $color-cinza-escuro;
+
+    @include from($bp-tablet) {
+      width: 233px;
+    }
+
+    &::placeholder {
+      color: $color-texto-placeholder;
+    }
+  }
+}
+
+.submit {
+  flex-shrink: 0;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: $weight-semibold;
+  color: $color-texto-botao-inscrever;
+
+  @include from($bp-tablet) {
+    width: 157px;
+  }
+}
+
+.terms {
+  display: flex;
+  gap: $space-8;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+
+  input {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    accent-color: $color-amarelo;
+  }
+}
+
+.success {
+  margin: 0;
+  font-weight: $weight-medium;
+  color: $color-amarelo;
+}

@@ -1,0 +1,77 @@
+@use 'variables' as *;
+
+@mixin from($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-width + 2 * $space-16;
+  margin-inline: auto;
+  padding-inline: $space-16;
+
+  @include from($bp-tablet) {
+    max-width: $container-width + 2 * $space-24;
+    padding-inline: $space-24;
+  }
+}
+
+@mixin container-scroll {
+  @include container;
+  @include horizontal-scroll;
+  scroll-padding-inline: $space-16;
+
+  @include from($bp-tablet) {
+    scroll-padding-inline: $space-24;
+  }
+}
+
+@mixin section-spacing {
+  margin-block: $section-gap-mobile;
+
+  @include from($bp-desktop) {
+    margin-block: $section-gap;
+  }
+}
+
+@mixin horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > * {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
