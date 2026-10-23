@@ -4,6 +4,8 @@ Página de e-commerce desenvolvida em **React + TypeScript + Sass** para o [test
 
 A vitrine é montada a partir do [JSON de produtos](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) e, ao clicar em **Comprar**, abre um modal com as informações do produto escolhido.
 
+🔗 **Deploy:** [teste-front-end-rho-three.vercel.app](https://teste-front-end-rho-three.vercel.app/)
+
 ## Tecnologias
 
 - **React 19** e **TypeScript**
