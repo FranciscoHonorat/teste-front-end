@@ -89,6 +89,11 @@ export const ChevronRightIcon = (p: IconProps) => (
     <path d="m9.5 6 6 6-6 6" />
   </Icon>
 );
+export const CloseIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M6 6l12 12M18 6 6 18" />
+  </Icon>
+);
 
 export const DevicesIcon = (p: IconProps) => (
   <Icon {...p}>

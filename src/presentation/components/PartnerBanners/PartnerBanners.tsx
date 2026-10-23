@@ -1,3 +1,4 @@
+import partnerImage from "../../../assets/banners/parceiros.webp";
 import { PromoBanner } from "../PromoBanner/PromoBanner";
 import styles from "./PartnerBanners.module.scss";
 
@@ -12,6 +13,7 @@ export function PartnerBanners() {
           text="Lorem ipsum dolor sit amet, consectetur"
           ctaLabel="Confira"
           ctaHref="#"
+          imageUrl={partnerImage}
         />
       ))}
     </section>

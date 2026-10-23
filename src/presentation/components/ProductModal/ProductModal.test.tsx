@@ -115,4 +115,12 @@ describe("ProductModal", () => {
       screen.getByRole("link", { name: "Veja mais detalhes do produto" }),
     ).toBeInTheDocument();
   });
+
+  it("mostra o ícone no botão Fechar", () => {
+    renderModal();
+
+    const button = screen.getByRole("button", { name: "Fechar" });
+
+    expect(button.querySelector("svg")).toBeInTheDocument();
+  });
 });

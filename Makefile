@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help install dev test lint build check up down logs dev-docker
+.PHONY: help install dev test lint format format-check build check up down logs dev-docker
 
 help: ## Lista os comandos
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -16,10 +16,16 @@ test: ## Roda os testes
 lint: ## Roda o linter
 	npm run lint
 
+format: ## Formata o código com o Prettier
+	npm run format
+
+format-check: ## Confere a formatação sem alterar arquivos
+	npm run format:check
+
 build: ## Gera o build de produção em dist/
 	npm run build
 
-check: lint test ## Lint + testes
+check: lint format-check test ## Lint + formatação + testes + tipos
 	npm run typecheck
 
 up: ## Sobe a versão de produção (Docker) em http://localhost:8080

@@ -4,6 +4,7 @@ import { MIN_QUANTITY } from "../../../domain/rules/quantity";
 import { formatPrice } from "../../formatters/formatPrice";
 import { QuantityStepper } from "../QuantityStepper/QuantityStepper";
 import { Button } from "../Button/Button";
+import { CloseIcon } from "../icons/Icons";
 import styles from "./ProductModal.module.scss";
 
 type ProductModalProps = {
@@ -44,7 +45,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
         aria-label="Fechar"
         onClick={onClose}
       >
-        ×
+        <CloseIcon size={20} />
       </button>
       {product && (
         <ProductDetails

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import blackFridayImage from "../../assets/banners/black-friday.webp";
 import type { ListProducts } from "../../application/usecases/ListProducts";
 import type { Product } from "../../domain/entities/Product";
 import { BrandList } from "../components/BrandList/BrandList";
@@ -35,6 +36,7 @@ export function HomePage({ listProducts }: HomePageProps) {
           }
           ctaLabel="Ver produto"
           ctaHref="#"
+          imageUrl={blackFridayImage}
         />
         <CategoryList />
         <ProductShowcase
